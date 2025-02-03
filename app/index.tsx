@@ -9,13 +9,13 @@ const index: React.FC = () => {
         <Text style={styles.headerTitle}>Leader Board</Text>
         <View style={styles.mainCardContainer}>
           {
-            [3, 1, 2].map((item, index) => {
-              return <View key={index} style={styles.mainCard}>
+            [3, 1, 2,].map((item, index) => {
+              return <View key={index} style={[styles.mainCard,item !== 1 && {marginTop:20}]}>
                 <Image source={{ uri: "https://static.vecteezy.com/system/resources/thumbnails/023/056/329/small_2x/programmer-people-working-laptops-or-smartphones-with-ai-artificial-intelligence-software-engineer-coding-on-laptop-computers-with-technology-icons-and-binary-code-big-data-ai-bot-digital-machine-photo.jpg" }} style={styles.mainCardImage} resizeMode='cover'
                 />
                 <Text style={styles.mainCardTitle}>Aditya</Text>
                 <View style={styles.mainCardRankContainer}>
-                  <Text style={styles.mainCardRankContainerText}>1</Text>
+                  <Text style={styles.mainCardRankContainerText}>{item}</Text>
                 </View>
               </View>
             })
@@ -25,7 +25,7 @@ const index: React.FC = () => {
 
       </View>
       {/* second Container  */}
-      <FlatList data={[1, 2, 3]}
+      <FlatList data={[1, 2, 3,4,5,6,7,8,9,10,11,12,14,15,16,17,18,19,20]}
         renderItem={({ item, index }) => {
           return <View style={styles.card}>
             <View style={styles.cardDataContainer}>
@@ -112,12 +112,39 @@ const styles = StyleSheet.create({
     color:"white",
 
   },
-  card: {},
-  cardIndex: {},
-  cardImage: {},
-  carTitle: {},
-  cardDataContainer: {},
+  card: {
+    padding:20,
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:"space-between"
+
+
+  },
+  cardDataContainer: {
+    flexDirection:'row',
+    alignItems:"center",
+    gap:10,
+
+  },
+  cardIndex: {
+    color:"white",
+
+  },
+  cardImage: {
+    width:30,
+    height:30,
+    borderRadius:50,
+    marginLeft:10,
+
+  },
+  carTitle: {
+    color:"white",
+    fontSize:17,
+
+  },
   cardRankContainer: {},
-  cardRankTitle: {}
+  cardRankTitle: {
+    color:"orange"
+  }
 
 })
